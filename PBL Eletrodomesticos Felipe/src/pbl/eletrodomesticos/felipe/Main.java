@@ -35,19 +35,23 @@ public class Main {
                 //cliente:
                 JOptionPane.showMessageDialog(null, "Bem vindo, Cliente");
                 String[] clienteop= {"Liquidificador", "Ferro", "Batedeira"};
+                int month;
                 while(controlercliente!=-1){
                     controlercliente = JOptionPane.showOptionDialog(null, "O que deseja adquirir ?", "Selecione", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, clienteop, clienteop[0]);
                     if(controlercliente==0){
                         JOptionPane.showMessageDialog(null, "Produto: Liquidificador");
-                        JOptionPane.showConfirmDialog(null, "Marca:"+loja.getLiquidificador().getBrand()+"\nVoltagem:"+loja.getLiquidificador().getVoltage()+"\nPreço:"+loja.getLiquidificador().getPrice()+"\nLitragem:"+loja.getLiquidificador().getLitragem()+"\nTampa:"+loja.getLiquidificador().getTampa().getDescri()+"\nCor Tampa:"+loja.getLiquidificador().getTampa().getCor());
+                        month=Integer.parseInt(JOptionPane.showInputDialog("Insira o Mês atual:"));
+                        JOptionPane.showConfirmDialog(null, "Marca:"+loja.getLiquidificador().getBrand()+"\nVoltagem:"+loja.getLiquidificador().getVoltage()+"\nPreço:"+loja.getLiquidificador().discount(month)+"\nLitragem:"+loja.getLiquidificador().getLitragem()+"\nTampa:"+loja.getLiquidificador().getTampa().getDescri()+"\nCor Tampa:"+loja.getLiquidificador().getTampa().getCor());
                     }
                     if(controlercliente==1){
                         JOptionPane.showMessageDialog(null, "Produto: Ferro");
-                        JOptionPane.showConfirmDialog(null, "Marca:"+loja.getFerro().getBrand()+"\nVoltagem:"+loja.getFerro().getVoltage()+"\nPrice:"+loja.getFerro().getPrice());
+                        month=Integer.parseInt(JOptionPane.showInputDialog("Insira o Mês atual:"));
+                        JOptionPane.showConfirmDialog(null, "Marca:"+loja.getFerro().getBrand()+"\nVoltagem:"+loja.getFerro().getVoltage()+"\nPrice:"+loja.getFerro().discount(month));
                     }
                     if(controlercliente==2){
                         JOptionPane.showMessageDialog(null, "Produto: Batedeira");
-                        JOptionPane.showConfirmDialog(null, "Marca:"+loja.getBatedeira().getBrand()+"\nVoltagem:"+loja.getBatedeira().getVoltage()+"\nPrice:"+loja.getBatedeira().getPrice()+"\nLitragem:"+loja.getBatedeira().getLitragem()+"\nN. Hélices:"+loja.getBatedeira().getQhelices());
+                        month=Integer.parseInt(JOptionPane.showInputDialog("Insira o Mês atual:"));
+                        JOptionPane.showConfirmDialog(null, "Marca:"+loja.getBatedeira().getBrand()+"\nVoltagem:"+loja.getBatedeira().getVoltage()+"\nPrice:"+loja.getBatedeira().discount(month)+"\nLitragem:"+loja.getBatedeira().getLitragem()+"\nN. Hélices:"+loja.getBatedeira().getQhelices());
                     }
                 }
                 break;
